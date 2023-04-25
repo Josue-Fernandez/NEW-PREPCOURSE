@@ -11,8 +11,8 @@ function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
  
-   var ultimo = array.pop();
-   return ultimo;
+   return array.pop();
+   
 }
 
 function obtenerLargoDelArray(array) {
@@ -26,10 +26,10 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   var sumauno = array.map((num)=>{
-      return(num+1);
-   }) 
-   return sumauno;
+   var masuno = array.map((num)=>{
+      return num +1;
+   })
+   return masuno
 
 }
 
@@ -38,9 +38,9 @@ function agregarItemAlFinalDelArray(array, elemento) {
    // Retorna el arreglo.
    // Tu código:
   
-   array.push(elemento);
+   array.push(elemento)
    return array
-
+   
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
@@ -49,7 +49,7 @@ function agregarItemAlComienzoDelArray(array, elemento) {
    // Tu código:
 
    array.unshift(elemento);
-   return array;
+   return array
 }
 
 function dePalabrasAFrase(palabras) {
@@ -58,9 +58,10 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-   
-   var unir = palabras.join(' ');
-   return unir;
+
+   str = palabras.join(' ');
+   return str;
+
 
 }
 
@@ -68,6 +69,7 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+
    if(array.includes(elemento)===true){
       return true 
    }else{
@@ -80,10 +82,9 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   var suma =0;
-   for(i=0; i<arrayOfNums.length; i++){
-      suma = suma+arrayOfNums[i];
-   }return suma
+  var valorini = 0;
+  var sumafinal = arrayOfNums.reduce((acum,valor)=>acum+valor,valorini);
+  return sumafinal;
    
   }
 
@@ -195,19 +196,22 @@ function mesesDelAño(array) {
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
    var nuevoarray =[];
-   for(i=0; i=array.length; i++){
-      if(array[i]==='Enero'||array[i]==='Marzo'||array[i]==='Noviembre'){
-         nuevoarray.push=array[i];
-      }else{
+   array.forEach(element => {
+      if(element ==='Enero'|| element==='Marzo'||element==='Noviembre'){
+         nuevoarray.push(element);
+      }
+   });
+      if(nuevoarray.length<3){
          return "No se encontraron los meses pedidos"
       }
-   }return nuevoarray;
+      return nuevoarray;
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   
 }
 
 function mayorACien(array) {
