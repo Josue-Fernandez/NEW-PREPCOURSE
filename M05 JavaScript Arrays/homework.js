@@ -82,10 +82,9 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-  var valorini = 0;
-  var sumafinal = arrayOfNums.reduce((acum,valor)=>acum+valor,valorini);
-  return sumafinal;
-   
+   var ini = 0;
+   var sum = arrayOfNums.reduce((a,v)=>a+v,ini);
+   return sum;   
   }
 
 function promedioResultadosTest(resultadosTest) {
@@ -115,33 +114,23 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-   
-   if(arguments.length===0){
-      return 0
-   }else{
-      var total = arguments.map((num)=>{
-         num*num;
-      })
+   if(arguments.length===0) return 0;
+   if(arguments.length===1) return arguments[0];
 
+   var resultado = 1;
+   for(i=0; i<arguments.length; i++){
+      resultado = resultado*arguments[i];
    }
-   return total
-
-   
+   return resultado;
 
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-   const resultado = array.filter(num => num > 18);
-   return resultado.length;
-   // var contador =0;
+      var resultado = array.filter(num => num>18)
+      return resultado.length
 
-   // for(i=0; i<array.length; i++){
-   //    if(array[i]>18){
-   //       contador = contador+1;
-   //    }
-   // }return contador;
 
 
 }
@@ -211,6 +200,13 @@ function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+  var res = [];
+  
+
+   for(i=0; i<=10; i++){
+      res.push([i]*6);
+   }
+   return res;
    
 }
 
@@ -218,6 +214,10 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var mayorcien = array.filter((num)=>{
+      return num>100;
+   })
+   return mayorcien;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -231,6 +231,19 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+ 
+   const arreglonuevo = [];
+ 
+   for(i=0; i<10; i++){
+      num= num+2;
+      if(i===num)break;
+      arreglonuevo.push(num)
+
+      if(i===9){
+      return arreglonuevo
+      }
+   }  return 'Se interrumpió la ejecución'
+
 }
 
 function continueStatement(num) {
@@ -240,6 +253,13 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   let continueStatement = [];
+   for (let i = 0; i < 10; i++){
+      if (i === 5)
+      continue;
+      num = num + 2;
+      continueStatement.push(num);
+   } return continueStatement;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
