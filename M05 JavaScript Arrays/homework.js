@@ -156,26 +156,27 @@ function empiezaConNueve(num) {
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
 
-   str = num.toString().split('');
-   for(i=0; i<str.length; i++){
-      if(str[0]==='9'){
+   var varstring = num.toString();
+
+   for(i=0; i<varstring.length; i++){
+      if(varstring[0]==='9'){
          return true
       }else{
          return false
       }
    }
-   return str;
+
+  
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-  var igual = array.every((num)=>{
-   return num ===array[0];
+  var iguales = array.every((num)=>{
+   return num===array[0];
   })
-
-  return igual;
+  return iguales;
 
 }
 
@@ -184,16 +185,15 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
-   var nuevoarray =[];
-   array.forEach(element => {
-      if(element ==='Enero'|| element==='Marzo'||element==='Noviembre'){
-         nuevoarray.push(element);
-      }
-   });
-      if(nuevoarray.length<3){
-         return "No se encontraron los meses pedidos"
-      }
-      return nuevoarray;
+ var nuevo =[];
+ array.forEach(meses => {
+   if(meses==='Enero'||meses==='Marzo'||meses==='Noviembre'){
+      nuevo.push(meses);
+   }
+ });
+ if(nuevo.length<3){return 'No se encontraron los meses pedidos'}
+ 
+ return nuevo;
 }
 
 function tablaDelSeis() {
@@ -204,9 +204,9 @@ function tablaDelSeis() {
   
 
    for(i=0; i<=10; i++){
-      res.push([i]*6);
+      res.push([i]*6)
    }
-   return res;
+   return res
    
 }
 
@@ -214,10 +214,8 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
-   var mayorcien = array.filter((num)=>{
-      return num>100;
-   })
-   return mayorcien;
+  var mayorcien = array.filter(num => num >100);
+  return mayorcien;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -232,17 +230,39 @@ function breakStatement(num) {
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
  
-   const arreglonuevo = [];
- 
-   for(i=0; i<10; i++){
-      num= num+2;
-      if(i===num)break;
-      arreglonuevo.push(num)
 
+   var sumasum = [];
+
+   for(i=0; i<10; i++){
+      if(i===num) break;
+      num=num+2;
+      sumasum.push(num);
+     
       if(i===9){
-      return arreglonuevo
-      }
-   }  return 'Se interrumpió la ejecución'
+      return sumasum;
+   }
+   }
+   
+   return "Se interrumpió la ejecución"
+   
+
+
+   // const arreglonuevo = [];
+ 
+   // for(i=0; i<10; i++){
+   //    num= num+2;
+   //    if(i===num)break;
+   //    arreglonuevo.push(num)
+
+   //    if(i===9){
+   //    return arreglonuevo
+   //    }
+   // }  return 'Se interrumpió la ejecución'
+
+
+
+
+
 
 }
 
@@ -253,13 +273,15 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
-   let continueStatement = [];
-   for (let i = 0; i < 10; i++){
-      if (i === 5)
-      continue;
-      num = num + 2;
-      continueStatement.push(num);
-   } return continueStatement;
+   var nueva =[];
+
+   for(i=0; i<10; i++){
+      if(i===5){continue;}
+      num= num+2;
+      nueva.push(num);
+   }
+   return nueva
+   
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
